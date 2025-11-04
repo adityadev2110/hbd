@@ -281,4 +281,12 @@ p {
 
 .name {
     margin-left: 150px;
+
+}
+.birthday-text {
+  white-space: normal !important;
+  display: block;
+  font-size: min(40px, 8vw) !important;
+  text-align: center !important;
+  line-height: 1.25 !important;
 }
