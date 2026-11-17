@@ -1,0 +1,226 @@
+@import "tailwindcss";
+
+:root {
+  --font-display: 'Fredoka', 'Quicksand', sans-serif;
+  --font-script: 'Dancing Script', cursive;
+  --font-cursive: 'Pacifico', 'Dancing Script', cursive;
+  --font-sans: 'Quicksand', system-ui, sans-serif;
+  font-family: var(--font-sans);
+  color: #2c3545;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  min-height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffeef4;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.text-plum {
+  color: #87516f;
+}
+
+.text-rose {
+  color: #f41f68;
+}
+
+/* V5 Master Stage Backdrop */
+.v5-stage {
+  position: relative;
+  min-height: 100svh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px 48px;
+  overflow: hidden;
+  background-color: #ffeef4;
+  background-image:
+    url('/images/v5-bg.jpg'),
+    radial-gradient(circle at 50% 38%, #fffcfd 0%, #fff0f5 48%, #ffd6e6 100%);
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  isolation: isolate;
+}
+
+/* Fallback/Enhanced SVG Bunting in Top Left */
+.v5-bunting-corner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: min(340px, 46vw);
+  pointer-events: none;
+  z-index: 2;
+  filter: drop-shadow(0 6px 12px rgba(235, 120, 160, 0.16));
+}
+
+/* Soft Dreamy Clouds Bottom Layer */
+.v5-clouds-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 155px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* V5 White Card Container */
+.v5-card {
+  position: relative;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.96);
+  border: 2px solid rgba(255, 228, 238, 0.95);
+  border-radius: 36px;
+  box-shadow:
+    0 24px 60px rgba(232, 118, 158, 0.16),
+    0 6px 20px rgba(232, 118, 158, 0.08),
+    inset 0 1px 0 #ffffff;
+  backdrop-filter: blur(16px);
+  text-align: center;
+}
+
+/* Subtle Pink Graph-Paper Grid on Lock Card */
+.v5-grid-card {
+  background-color: rgba(255, 252, 254, 0.97);
+  background-image:
+    linear-gradient(to right, rgba(255, 182, 205, 0.16) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 182, 205, 0.16) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Primary Pink Pill Button */
+.v5-btn-pink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 32px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #ff6584 0%, #ff3e7f 100%);
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow:
+    0 10px 24px rgba(255, 72, 130, 0.35),
+    inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.v5-btn-pink:hover {
+  box-shadow: 0 14px 28px rgba(255, 72, 130, 0.45);
+}
+
+/* White Pill Button with Pink Text */
+.v5-btn-white {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: 999px;
+  border: 1.5px solid #ffe0eb;
+  background: #ffffff;
+  color: #f42f72;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  box-shadow: 0 8px 22px rgba(244, 47, 114, 0.12);
+  transition: all 0.2s;
+}
+
+.v5-btn-white:hover {
+  background: #fff5f9;
+  border-color: #ffb8d0;
+}
+
+/* Circular Keypad Button */
+.v5-key-circle {
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  border: 1.5px solid #ffebf1;
+  background: #ffffff;
+  color: #f41f68;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+  box-shadow:
+    0 6px 16px rgba(236, 114, 155, 0.1),
+    inset 0 1px 0 #ffffff;
+  transition: background 0.18s, border-color 0.18s, box-shadow 0.18s;
+}
+
+.v5-key-circle:hover {
+  background: #fff4f8;
+  border-color: #ffc2d6;
+  box-shadow: 0 8px 20px rgba(236, 114, 155, 0.18);
+}
+
+/* Heart PIN Indicator */
+.v5-pin-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid #ffd5e3;
+  background: #ffffff;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 3px 8px rgba(244, 63, 122, 0.08);
+  transition: all 0.25s ease;
+}
+
+.v5-pin-circle.active {
+  background: #ffe4ee;
+  border-color: #ff6b9d;
+  box-shadow: 0 4px 12px rgba(255, 75, 136, 0.24);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 14px 45px rgba(176, 112, 145, 0.14);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html, body {
+    scroll-behavior: auto;
+  }
+  *, *:before, *:after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
